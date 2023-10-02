@@ -46,7 +46,6 @@ jobs:
         push: true
         tags: liviatanaka/partida-02-ci:${{ github.sha }}
 
-
     - name: executing remote ssh commands using password
       uses: appleboy/ssh-action@master
       with:
