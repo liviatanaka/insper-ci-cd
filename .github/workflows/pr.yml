@@ -31,12 +31,8 @@ jobs:
     - name: Build with Maven
       run: mvn -B package --file pom.xml
 
-    - name: jacoco-badge-generator
-      uses: cicirello/jacoco-badge-generator@v2.11.0
-            
-
     - name: Add coverage to PR
-      id: jacoco
+      id: jacoco_report
       uses: madrapps/jacoco-report@v1.6.1
       with:
         paths: |
