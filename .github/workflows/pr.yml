@@ -52,7 +52,7 @@ jobs:
         delete-branch: true
 
     - name: Add coverage to PR
-      id: jacoco
+      id: jacoco_report
       uses: madrapps/jacoco-report@v1.6.1
       with:
         paths: |
