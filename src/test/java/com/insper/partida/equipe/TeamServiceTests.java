@@ -1,5 +1,6 @@
 package com.insper.partida.equipe;
 
+import com.insper.partida.equipe.dto.SaveTeamDTO;
 import com.insper.partida.equipe.dto.TeamReturnDTO;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
@@ -46,6 +47,35 @@ public class TeamServiceTests {
         Assertions.assertEquals(1, resp.size());
     }
 
+//    @Test
+//    void test_saveTeam(){
+//        Team team = getTeam();
+//
+//        SaveTeamDTO saveTeamDTO = new SaveTeamDTO();
+//        saveTeamDTO.setIdentifier(team.getIdentifier());
+//        saveTeamDTO.setName(team.getName());
+//        saveTeamDTO.setStadium(team.getStadium());
+//
+//        Mockito.when(teamRepository.existsByIdentifier(team.getIdentifier())).thenReturn(false);
+//        Mockito.when(teamRepository.save(team)).thenReturn(team);
+//        TeamReturnDTO teamReturnDTO = teamService.saveTeam(saveTeamDTO);
+//
+//        Assertions.assertEquals("time-1", teamReturnDTO.getIdentifier());
+//        Assertions.assertEquals("Time 1", teamReturnDTO.getName());
+//
+//
+//    }
+
+    @Test
+    void test_getTeam(){
+        Team team = getTeam();
+
+        Mockito.when(teamRepository.findByIdentifier("time-1")).thenReturn(team);
+
+        Team resp = teamService.getTeam("time-1");
+
+        Assertions.assertEquals("1", resp.getId());
+    }
 
 
 

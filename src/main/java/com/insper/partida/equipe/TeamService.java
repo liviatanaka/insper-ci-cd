@@ -29,8 +29,8 @@ public class  TeamService {
         team.setName(saveTeam.getName());
         team.setIdentifier(saveTeam.getIdentifier());
 
-        team = teamRepository.save(team);
-        return  TeamReturnDTO.covert(team);
+        Team teamSaved = teamRepository.save(team);
+        return  TeamReturnDTO.covert(teamSaved);
     }
 
 
